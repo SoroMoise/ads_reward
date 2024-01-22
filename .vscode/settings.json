@@ -1,3 +1,6 @@
 {
-	"materialkv.pythonFile": "main.py"
+	"materialkv.pythonFile": "main.py",
+	"editor.autoIndent": "full",
+	"editor.indentSize": "tabSize",
+	"editor.detectIndentation": true
 }

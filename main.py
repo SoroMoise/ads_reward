@@ -1,4 +1,3 @@
-
 """
 Script for managing hot reloading of the project.
 For more details see the documentation page -
@@ -9,24 +8,28 @@ To run the application in hot boot mode, execute the command in the console:
 DEBUG=1 python main.py
 """
 
-from Model.database import DataBase
+
+import importlib
+import os
+from time import time
+
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.tools.hotreload.app import MDApp
 from kivy.core.window import Window
-import importlib
-import os
+
+from Model.database import DataBase
 
 
 # TODO: You may know an easier way to get the size of a computer display.
-
 # Change the values of the application window size as you need.
-
 # Place the application window on the right side of the computer screen.
 
+
 class AddReward(MDApp):
-    KV_DIRS = [os.path.join(os.getcwd(), "View")]
+    KV_DIRS: list[str] = [os.path.join(os.getcwd(), "View")]
 
     def build_app(self) -> MDScreenManager:
+        self.start_time: float = time()
         """
         In this method, you don't need to change anything other than the
         application theme.
@@ -51,6 +54,9 @@ class AddReward(MDApp):
 
         return self.manager_screens
 
+    def on_start(self):
+        print("Le temps de chargement est : ", time() - self.start_time)
+
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:
         """
         The method handles keyboard events.
@@ -63,7 +69,8 @@ class AddReward(MDApp):
             self.rebuild()
 
 
-AddReward().run()
+if __name__ == "__main__":
+    AddReward().run()
 
 # After you finish the project, remove the above code and uncomment the below
 # code to test the application normally without hot reloading.

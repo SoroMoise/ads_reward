@@ -1,2 +1,8 @@
+# kivy init configuration
+config.ini
+
+# virtual env
 venv
+
+# python compile folders
 __pycache__
