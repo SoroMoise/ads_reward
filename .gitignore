@@ -6,3 +6,12 @@ venv
 
 # python compile folders
 __pycache__
+
+# internationnalization
+.*.swp
+messages.pot
+langapp.mo
+
+
+# vscode extension : python import helper
+.vscode/PythonImportHelper**.json

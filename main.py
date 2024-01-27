@@ -9,15 +9,17 @@ DEBUG=1 python main.py
 """
 
 
-import importlib
 import os
+import importlib
 from time import time
+
+from kivy.core.window import Window
 
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.tools.hotreload.app import MDApp
-from kivy.core.window import Window
 
 from Model.database import DataBase
+from Utility.language import tr
 
 
 # TODO: You may know an easier way to get the size of a computer display.
@@ -26,14 +28,16 @@ from Model.database import DataBase
 
 
 class AddReward(MDApp):
+
     KV_DIRS: list[str] = [os.path.join(os.getcwd(), "View")]
 
     def build_app(self) -> MDScreenManager:
-        self.start_time: float = time()
         """
         In this method, you don't need to change anything other than the
         application theme.
         """
+
+        self.start_time: float = time()
 
         import View.screens
 
@@ -54,8 +58,11 @@ class AddReward(MDApp):
 
         return self.manager_screens
 
+    def on_lang(self, lang):
+        tr.switch_lang(lang)
+
     def on_start(self):
-        print("Le temps de chargement est : ", time() - self.start_time)
+        print("the app loading time : ", time() - self.start_time)
 
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:
         """

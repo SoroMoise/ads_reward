@@ -1,6 +1,6 @@
 {
-	"materialkv.pythonFile": "main.py",
-	"editor.autoIndent": "full",
-	"editor.indentSize": "tabSize",
-	"editor.detectIndentation": true
+  "materialkv.pythonFile": "main.py",
+  "editor.autoIndent": "full",
+  "editor.detectIndentation": true,
+  "python.linting.banditPath": "/root/Documents/ads_reward/.venv/bin/python"
 }

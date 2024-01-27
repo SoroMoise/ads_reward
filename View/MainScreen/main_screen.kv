@@ -1,1 +1,46 @@
+#:kivy 2.3.0
+
+#:import tr __main__.tr
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
 <MainScreenView>
+  my_app: app
+  MDNavigationLayout:
+    ScreenManager:
+      id: navigation_layout_screen_manager
+      Screen:
+        MDTopAppBar:
+          title: "Ads Rewards"
+          elevation: 2
+          pos_hint: {"top": 1}
+          left_action_items: [["menu", lambda x: [ nav_drawer.set_state("open") if nav_drawer.state == "close" else nav_drawer.set_state("close") ]]]
+          right_action_items: [["reload", lambda x: print("shoul refresh")]]
+        
+        MDBoxLayout:
+          orientation: 'vertical'
+          MDLabel:
+            text: tr._('Hello World')
+            color: get_color_from_hex("#556699")
+          
+          MDSeparator:
+            color: get_color_from_hex("#aa1111")
+
+          Button:
+            text: tr._('French')
+            on_release: app.on_lang('fr')
+
+          Button:
+            text: tr._('English')
+            on_release: app.on_lang('en')
+
+        MDNavigationDrawer:
+          id: nav_drawer
+          radius: [0, 40, 40, 0]
+          type: "modal"
+          enable_swiping: True
+          swipe_edge_width: "20dp"
+          elevation:0
+          MDBoxLayout:
+            id: content_nav_drawer
+            screen_manager: navigation_layout_screen_manager
+            nav_drawer: nav_drawer
