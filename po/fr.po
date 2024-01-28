@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 01:39+0000\n"
+"POT-Creation-Date: 2024-01-27 05:11+0000\n"
 "PO-Revision-Date: 2013-08-01 15:36+0200\n"
 "Last-Translator: Mathieu Virbel <mat@kivy.org>\n"
 "Language-Team: Mathieu Virbel <mat@kivy.org>\n"
@@ -16,14 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lang.kv:8
-msgid "Hello World"
-msgstr "Bonjour tout le monde"
+#: View/MainScreen/main_screen.kv:28
+msgid "Watching a ads"
+msgstr "Regarder une publicité"
 
-#: lang.kv:17
-msgid "French"
-msgstr "Francais"
-
-#: lang.kv:21
-msgid "English"
-msgstr "Anglais"
