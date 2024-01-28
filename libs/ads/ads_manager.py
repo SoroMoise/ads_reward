@@ -1,12 +1,7 @@
-from kivy import platform
-
 from kivmob import KivMob
 from kivymd.toast import toast
 
 from libs.ads.ads_ids import Ids
-
-if platform == "android":
-    from kivymd.toast import androidtoast
 
 
 class AdsManager:
@@ -29,13 +24,11 @@ class AdsManager:
         self.last_banner_pos_hade_top = False
 
     @staticmethod
-    def show_toast(text: str, duration=3.5, length_long=True, gravity=80, y=200, x=0):
+    def show_toast(text: str, length_long=True, gravity=80, y=200, x=0):
         """
         show_toast show toast on app
         """
-        if platform == "android":
-            androidtoast.toast(text, length_long, gravity, y, x)
-        toast(text, duration)
+        toast(text, length_long, gravity, y, x)
 
     def create_new_banner(self):
         """
