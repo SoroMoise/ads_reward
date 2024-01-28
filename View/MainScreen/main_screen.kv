@@ -10,7 +10,7 @@
       id: navigation_layout_screen_manager
       Screen:
         MDTopAppBar:
-          title: "Ads Rewards"
+          title: "Ads Reward"
           elevation: 2
           pos_hint: {"top": 1}
           left_action_items: [["menu", lambda x: [ nav_drawer.set_state("open") if nav_drawer.state == "close" else nav_drawer.set_state("close") ]]]
@@ -18,20 +18,14 @@
         
         MDBoxLayout:
           orientation: 'vertical'
-          MDLabel:
-            text: tr._('Hello World')
-            color: get_color_from_hex("#556699")
-          
-          MDSeparator:
-            color: get_color_from_hex("#aa1111")
-
-          Button:
-            text: tr._('French')
-            on_release: app.on_lang('fr')
-
-          Button:
-            text: tr._('English')
-            on_release: app.on_lang('en')
+          MDBoxLayout:
+            MDRectangleFlatIconButton:
+              pos_hint: {'center_x': .5, 'center_y': .5}
+              size_hint: 1, None
+              height: dp(10)
+              text: tr._("Watching a ads")
+              icon: "android"
+              on_release: root.show_banner()
 
         MDNavigationDrawer:
           id: nav_drawer

@@ -1,33 +1,19 @@
-"""
-Script for managing hot reloading of the project.
-For more details see the documentation page -
-
-https://kivymd.readthedocs.io/en/latest/api/kivymd/tools/patterns/create_project/
-
-To run the application in hot boot mode, execute the command in the console:
-DEBUG=1 python main.py
-"""
-
-
 import os
 import importlib
 from time import time
 
 from kivy.core.window import Window
-
-from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.tools.hotreload.app import MDApp
+from kivymd.uix.screenmanager import MDScreenManager
 
-from Model.database import DataBase
 from Utility.language import tr
-
-
-# TODO: You may know an easier way to get the size of a computer display.
-# Change the values of the application window size as you need.
-# Place the application window on the right side of the computer screen.
+from Model.database import DataBase
 
 
 class AddReward(MDApp):
+    """
+    AddReward app class
+    """
 
     KV_DIRS: list[str] = [os.path.join(os.getcwd(), "View")]
 

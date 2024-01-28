@@ -1,6 +1,9 @@
 # kivy init configuration
 config.ini
 
+# before deploy
+before_prod.todo.md
+
 # virtual env
 venv
 

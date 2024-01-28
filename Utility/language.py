@@ -31,7 +31,7 @@ class Language(Observable):
 
     def switch_lang(self, lang):
         locale_dir = "assets/languages_data/locales/"
-        locales = gettext.translation('langapp', locale_dir, languages=[lang])
+        locales = gettext.translation("langapp", locale_dir, languages=[lang])
 
         self.ugettext = locales.gettext
         self.lang = lang
