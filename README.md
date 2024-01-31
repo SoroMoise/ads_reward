@@ -8,8 +8,10 @@ Explore and extend this database to accelerate the process of developing Kivy® 
 
 # Internationnalize
 
-## How to install gettext on linux
+## How to install gettext and make on linux
   > `sudo apt install gettext`
+  
+  > `sudo apt install make`
 
 ## How to generate
 
@@ -17,5 +19,3 @@ Explore and extend this database to accelerate the process of developing Kivy® 
 
   >  `make po`
 
-
-*NB:* Note that you should install **make** tools before
