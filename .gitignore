@@ -13,7 +13,7 @@ __pycache__
 # internationnalization
 .*.swp
 messages.pot
-langapp.mo
+po
 
 
 # vscode extension : python import helper
