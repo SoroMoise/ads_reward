@@ -12,9 +12,6 @@ __pycache__
 
 # internationnalization
 .*.swp
-messages.pot
-po
-
 
 # vscode extension : python import helper
 .vscode/PythonImportHelper**.json

@@ -30,7 +30,7 @@ class Language(Observable):
             return super(Language, self).funbind(name, func, *args, **kwargs)
 
     def switch_lang(self, lang):
-        locale_dir = "assets/languages_data/locales/"
+        locale_dir = "assets/language/locales/"
         locales = gettext.translation("langapp", locale_dir, languages=[lang])
 
         self.ugettext = locales.gettext
