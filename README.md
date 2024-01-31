@@ -8,6 +8,9 @@ Explore and extend this database to accelerate the process of developing Kivy® 
 
 # Internationnalize
 
+## How to install gettext on linux
+  > `sudo apt install gettext`
+
 ## How to generate
 
   >  `make mo`
