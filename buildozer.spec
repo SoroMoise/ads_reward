@@ -13,16 +13,16 @@ package.domain = org.adsreward
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ico,sqlite
+source.include_exts = py,jpg,kv,atlas,po,mo,pot,
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (let empty to not exclude anything)
-source.exclude_exts = spec,txt,ini,md
+source.exclude_exts = spec,txt,ini,md,TransportSecurity
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-source.exclude_dirs = tests,bin,.buildozer,test,.idea,apk,.git,__pycache__
+source.exclude_dirs = tests,bin,.buildozer,test,.idea,apk,.git,__pycache__,venv,.vscode/PythonImportHelper**.json,**.code,**.log,Backups,Cached**,Cache**,Code**,Dawn**,Service**,Session**,User/**,GPUCache**,Local**,Crash**,WebStorage**,Dictionaries,databases,code.lock,Cookies**,Trust**,Preferences,Network**,languagepacks.json,
 
 # (list) List of exclusions using pattern matching
 source.exclude_patterns = license,images/*/*.jpg
@@ -36,7 +36,7 @@ version = 0.7.13
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3, kivy, kivymd, Pillow, hostpython3, android, android, jnius, kivmob
+requirements = python3,kivy==master,kivymd,Pillow,android,jnius,kivmob
 #, +buildozer
 
 # (str) Custom source folders for requirements
@@ -73,19 +73,19 @@ fullscreen = 0
 android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = WRITE_EXTERNAL_STORAGE, INTERNET, ACCESS_NETWORK_STATE
+android.permissions = (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18), android.permission.INTERNET, ACCESS_NETWORK_STATE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 28
+# android.api = 30
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
 
 # (int) Android SDK version to use
-android.sdk = 24
+# android.sdk = 24
 
 # (str) Android NDK version to use
-android.ndk = 19c
+# android.ndk = 19c
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
@@ -94,7 +94,7 @@ android.ndk = 19c
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-#android.ndk_path = /home/soro/.buildozer/android/platform/android-ndk-r19c
+android.ndk_path = /home/soromoise/.buildozer/android/platform/android-ndk-r25b
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path = /media/soro/42750c67-9796-40bf-b984-63c950abf31c/home/soro/.buildozer/android/platform/android-sdk/
@@ -111,7 +111,7 @@ android.skip_update = True
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-# android.accept_sdk_license = True
+android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.renpy.android.PythonActivity
@@ -144,7 +144,15 @@ android.skip_update = True
 
 # (list) Gradle dependencies to add (currently works only with sdl2_gradle
 # bootstrap)
-android.gradle_dependencies = 'com.google.firebase:firebase-ads:10.2.0'
+android.gradle_dependencies = io.github.simplejnius:sjfirebase:1.0.0,
+    com.google.firebase:firebase-ads,com.google.firebase:firebase-analytics,
+    com.google.firebase:firebase-auth,com.google.firebase:firebase-database,
+    com.google.firebase:firebase-firestore,com.google.firebase:firebase-storage,
+
+# (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
+# contains an 'androidx' package, or any package from Kotlin source.
+# android.enable_androidx requires android.api >= 28
+android.enable_androidx = True
 
 # (list) add java compile options
 # this can for example be necessary when importing certain java libraries using the 'android.gradle_dependencies' option
@@ -184,13 +192,16 @@ android.gradle_dependencies = 'com.google.firebase:firebase-ads:10.2.0'
 #android.uses_library =
 
 # (str) Android logcat filters to use
-#android.logcat_filters = *:S python:D
+android.logcat_filters = *:S python:D
 
 # (bool) Copy library instead of making a libpymodules.so
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = armeabi-v7a
+android.archs = arm64-v8a
+
+# (bool) enables Android auto backup feature (Android API >=23)
+android.allow_backup = True
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
@@ -223,5 +234,5 @@ warn_on_root = 1
 # build_dir = ./.buildozer
 
 # (str) Path to build output (i.e. .apk, .ipa) storage
-# bin_dir = ./bin
+bin_dir = ./bin
 
