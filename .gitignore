@@ -13,5 +13,31 @@ __pycache__
 # internationnalization
 .*.swp
 
-# vscode extension : python import helper
+# vscode extension
 .vscode/PythonImportHelper**.json
+**.code
+**.log
+Backups
+Cached**
+Cache**
+Code**
+Dawn**
+Service**
+Session**
+User/**
+GPUCache**
+Local**
+Crash**
+WebStorage**
+Dictionaries
+databases
+code.lock
+Cookies**
+Trust**
+TransportS**
+Preferences
+Network**
+languagepacks.json
+
+# build apk
+.buildozer/
