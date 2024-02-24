@@ -13,19 +13,19 @@ package.domain = org.adsreward
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,jpg,kv,atlas,po,mo,pot,
+source.include_exts = py,png,jpg,kv,atlas,ico,po,mo,pot
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (let empty to not exclude anything)
-source.exclude_exts = spec,txt,ini,md,TransportSecurity
+source.exclude_exts = spec,txt
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-source.exclude_dirs = tests,bin,.buildozer,test,.idea,apk,.git,__pycache__,venv,.vscode/PythonImportHelper**.json,**.code,**.log,Backups,Cached**,Cache**,Code**,Dawn**,Service**,Session**,User/**,GPUCache**,Local**,Crash**,WebStorage**,Dictionaries,databases,code.lock,Cookies**,Trust**,Preferences,Network**,languagepacks.json,
+source.exclude_dirs = tests,bin,.buildozer,.idea,apk,.git,venv
 
 # (list) List of exclusions using pattern matching
-source.exclude_patterns = license,images/*/*.jpg
+#source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
 version = 0.7.13
@@ -36,7 +36,7 @@ version = 0.7.13
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==master,kivymd,Pillow,android,jnius,kivmob
+requirements = python3,kivy,kivymd,Pillow,android,kivmob,kvdroid,hostpython3
 #, +buildozer
 
 # (str) Custom source folders for requirements
@@ -73,13 +73,13 @@ fullscreen = 0
 android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18), android.permission.INTERNET, ACCESS_NETWORK_STATE
+android.permissions = (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18), android.permission.INTERNET, ACCESS_NETWORK_STATE, WRITE_EXTERNAL_STORAGE
 
 # (int) Target Android API, should be as high as possible.
 # android.api = 30
 
 # (int) Minimum API your APK will support.
-android.minapi = 21
+#android.minapi = 21
 
 # (int) Android SDK version to use
 # android.sdk = 24
@@ -145,9 +145,9 @@ android.accept_sdk_license = True
 # (list) Gradle dependencies to add (currently works only with sdl2_gradle
 # bootstrap)
 android.gradle_dependencies = io.github.simplejnius:sjfirebase:1.0.0,
-    com.google.firebase:firebase-ads,com.google.firebase:firebase-analytics,
+    com.google.firebase:firebase-analytics,
     com.google.firebase:firebase-auth,com.google.firebase:firebase-database,
-    com.google.firebase:firebase-firestore,com.google.firebase:firebase-storage,
+    com.google.firebase:firebase-firestore,com.google.firebase:firebase-storage
 
 # (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
 # contains an 'androidx' package, or any package from Kotlin source.
@@ -198,7 +198,7 @@ android.logcat_filters = *:S python:D
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.archs = arm64-v8a
+android.archs = armeabi-v7a
 
 # (bool) enables Android auto backup feature (Android API >=23)
 android.allow_backup = True
@@ -215,7 +215,7 @@ android.allow_backup = True
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
+p4a.branch = master
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir = /mnt/sda3/Document/PycharmProjects/p4a/python-for-android-develop
