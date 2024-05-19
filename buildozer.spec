@@ -36,7 +36,7 @@ version = 0.7.13
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,Pillow,android,kivmob,kvdroid,hostpython3
+requirements = python3==3.10.6,kivy,kivymd,Pillow,android,kivmob,kvdroid,hostpython3,jnius,watchdog
 #, +buildozer
 
 # (str) Custom source folders for requirements
@@ -73,10 +73,10 @@ fullscreen = 0
 android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18), android.permission.INTERNET, ACCESS_NETWORK_STATE, WRITE_EXTERNAL_STORAGE
+android.permissions = WRITE_EXTERNAL_STORAGE, INTERNET, ACCESS_NETWORK_STATE
 
 # (int) Target Android API, should be as high as possible.
-# android.api = 30
+android.api = 28
 
 # (int) Minimum API your APK will support.
 #android.minapi = 21
@@ -94,7 +94,7 @@ android.permissions = (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVers
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path = /home/soromoise/.buildozer/android/platform/android-ndk-r25b
+android.ndk_path = /home/soro/.buildozer/android/platform/android-ndk-r25
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path = /media/soro/42750c67-9796-40bf-b984-63c950abf31c/home/soro/.buildozer/android/platform/android-sdk/
