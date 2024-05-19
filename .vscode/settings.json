@@ -1,7 +1,0 @@
-{
-  "materialkv.pythonFile": "main.py",
-  "editor.autoIndent": "full",
-  "editor.detectIndentation": true,
-  "python.linting.banditPath": "/root/Documents/ads_reward/.venv/bin/python",
-  "kvlang.pythonPath": "venv/bin/python"
-}

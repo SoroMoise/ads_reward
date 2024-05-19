@@ -14,29 +14,8 @@ __pycache__
 .*.swp
 
 # vscode extension
-.vscode/PythonImportHelper**.json
-**.code
-**.log
-Backups
-Cached**
-Cache**
-Code**
-Dawn**
-Service**
-Session**
-User/**
-GPUCache**
-Local**
-Crash**
-WebStorage**
-Dictionaries
-databases
-code.lock
-Cookies**
-Trust**
-TransportS**
-Preferences
-Network**
+.idea
+.vscode
 languagepacks.json
 
 # build apk
