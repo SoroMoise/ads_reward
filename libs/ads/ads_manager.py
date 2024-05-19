@@ -26,7 +26,7 @@ class AdsManager:
     @staticmethod
     def show_toast(text: str, length_long=True, gravity=80, y=200, x=0):
         """
-        show_toast show toast on app
+        ## show_toast: show toast on app
         """
         toast(text, length_long, gravity, y, x)
 
